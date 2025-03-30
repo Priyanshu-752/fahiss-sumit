@@ -61,10 +61,10 @@ const home = ({ navigation }) => {
             <Text style={styles.footerText}>Home</Text>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.footerItem}>
-          <Ionicons name="person-outline" size={28} color="#000" />
+        <TouchableOpacity style={styles.footerItem} onPress={() => navigation.navigate("profile1")} >
+          <Ionicons name="person-outline" size={28} color="#000"  />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.footerItem}>
+        <TouchableOpacity style={styles.footerItem} onPress={() => navigation.navigate("supporthm")}>
           <Ionicons name="headset-outline" size={28} color="#000" />
         </TouchableOpacity>
       </View>

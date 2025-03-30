@@ -18,6 +18,18 @@ import VehicleDetailsPage from './screens/VehicleDetailsPage';
 import policies1 from './screens/policies1';
 import policies2 from './screens/policies2';
 import registration from './screens/registration';
+import profile1 from './screens/profile1';
+import profile2 from './screens/profile2';
+import profile3 from './screens/profile3';
+import privacypolicy from './screens/privacypolicy';
+import terms from './screens/terms';
+import supporthm from './screens/supporthm';
+import supportfaq from './screens/supportfaq';
+import supportasi from './screens/supportasi';
+import supportasi1 from './screens/supportasi1';
+import supportasi2 from './screens/supportasi2';
+import supportfaq1 from './screens/supportfaq1';
+import supportfaq2 from './screens/supportfaq2';
 
 
 
@@ -44,6 +56,18 @@ const App = () => {
         <Stack.Screen name="policies2" component={policies2} options={{ headerShown: false }} />
         <Stack.Screen name="TrackStatusScreen" component={TrackStatusScreen} options={{ headerShown: false }} />
         <Stack.Screen name="registration" component={registration} options={{ headerShown: false }} />
+        <Stack.Screen name="profile1" component={profile1} options={{ headerShown: false }} />
+        <Stack.Screen name="profile2" component={profile2} options={{ headerShown: false }} />
+        <Stack.Screen name="profile3" component={profile3} options={{ headerShown: false }} />
+        <Stack.Screen name="privacypolicy" component={privacypolicy} options={{ headerShown: false }} />
+        <Stack.Screen name="terms" component={terms} options={{ headerShown: false }} />
+        <Stack.Screen name="supporthm" component={supporthm} options={{ headerShown: false }} />
+        <Stack.Screen name="supportfaq" component={supportfaq} options={{ headerShown: false }} />
+        <Stack.Screen name="supportasi" component={supportasi} options={{ headerShown: false }} />
+        <Stack.Screen name="supportasi1" component={supportasi1} options={{ headerShown: false }} />
+        <Stack.Screen name="supportasi2" component={supportasi2} options={{ headerShown: false }} />
+        <Stack.Screen name="supportfaq1" component={supportfaq1} options={{ headerShown: false }} />
+        <Stack.Screen name="supportfaq2" component={supportfaq2} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

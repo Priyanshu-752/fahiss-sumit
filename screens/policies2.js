@@ -5,7 +5,7 @@ import { Ionicons } from '@expo/vector-icons';
 const policies2 = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      {/* Header */}
+      
       <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
           <Ionicons name="arrow-back" size={24} color="black" />
@@ -13,7 +13,7 @@ const policies2 = ({ navigation }) => {
         <Text style={styles.headerTitle}>Policies</Text>
       </View>
 
-      {/* Policy Details */}
+     
       <ScrollView style={styles.detailsContainer}>
         <Text style={styles.sectionTitle}>MOTOR VEHICLE INSURANCE CERTIFICATE</Text>
         <View style={styles.detailBox}>
@@ -39,7 +39,7 @@ const policies2 = ({ navigation }) => {
         </View>
       </ScrollView>
 
-      {/* Footer Navigation */}
+     
       <View style={styles.footer}>
         <TouchableOpacity style={styles.footerItem} onPress={() => navigation.navigate('Home')}>
           <Ionicons name="home" size={28} color="#4682EF" />
