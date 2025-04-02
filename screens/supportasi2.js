@@ -61,7 +61,11 @@ const supportasi2 = ({ navigation }) => {
 };
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 20, backgroundColor: '#E5EFFF' },
+  container: { 
+    flex: 1,
+     padding: 20,
+      backgroundColor: '#E5EFFF'
+     },
   headerWrapper: {
     paddingTop: Platform.OS === 'ios' ? 50 : 20,
     backgroundColor: '#B1C9EF',
@@ -69,15 +73,32 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 16,
   },
-  title: { fontSize: 18, fontWeight: 'bold', marginLeft: 16 },
-  helperCard: { backgroundColor: '#FFFFFF', borderRadius: 10, padding: 16, marginVertical: 10, elevation: 2 },
-  headerRow: { flexDirection: 'row', justifyContent: 'space-between', marginBottom: 8 },
-  helperName: { fontSize: 16, fontWeight: 'bold' },
-  removeText: { color: '#FF5C5C' },
-  helperDetail: { fontSize: 14, color: '#666666' },
+  title: {
+     fontSize: 18,
+      fontWeight: 'bold',
+       marginLeft: 16
+       },
+  helperCard: { 
+    backgroundColor: '#FFFFFF', borderRadius: 10,
+     padding: 16, 
+     marginVertical: 10, 
+     elevation: 2
+     },
+  headerRow: { flexDirection:
+     'row', justifyContent: 'space-between', 
+     marginBottom: 8 },
+  helperName: { 
+    fontSize: 16, 
+    fontWeight: 'bold' },
+  removeText: { color: '#FF5C5C' 
+
+  },
+  helperDetail: { fontSize: 14,
+     color: '#666666' },
   detailsWrapper: { marginTop: 10 },
   detailItem: { fontSize: 14, marginBottom: 5 },
-  insuranceStatus: { fontSize: 14, color: '#FFA500', marginBottom: 5 },
+  insuranceStatus: { fontSize: 14, color: '#FFA500',
+     marginBottom: 5 },
 });
 
 export default supportasi2;

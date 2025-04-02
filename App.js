@@ -30,6 +30,15 @@ import supportasi1 from './screens/supportasi1';
 import supportasi2 from './screens/supportasi2';
 import supportfaq1 from './screens/supportfaq1';
 import supportfaq2 from './screens/supportfaq2';
+import registrationrenew from './screens/registrationrenew';
+
+import RegistrationRenew1 from './screens/registrationrenew1';
+import VehicleTechnicalInspection from './screens/VehicleTechnicalInspection';
+import VehicleTechnicalInspection1 from './screens/VehicleTechnicalInspection1';
+import Submitvideo from './screens/Submitvideo';
+import Paysecurely from './screens/Paysecurely';
+import Paysecurely1 from './screens/Paysecurely1';
+import Supportchat from './screens/Supportchat';
 
 
 
@@ -68,6 +77,14 @@ const App = () => {
         <Stack.Screen name="supportasi2" component={supportasi2} options={{ headerShown: false }} />
         <Stack.Screen name="supportfaq1" component={supportfaq1} options={{ headerShown: false }} />
         <Stack.Screen name="supportfaq2" component={supportfaq2} options={{ headerShown: false }} />
+        <Stack.Screen name="registrationrenew" component={registrationrenew} options={{ headerShown: false }} />
+        <Stack.Screen name="registrationrenew1" component={RegistrationRenew1} options={{ headerShown: false }} />
+        <Stack.Screen name="VehicleTechnicalInspection" component={VehicleTechnicalInspection} options={{ headerShown: false }} />
+        <Stack.Screen name="VehicleTechnicalInspection1" component={VehicleTechnicalInspection1} options={{ headerShown: false }} />
+        <Stack.Screen name="Submitvideo" component={Submitvideo} options={{ headerShown: false }} />
+        <Stack.Screen name="Paysecurely" component={Paysecurely} options={{ headerShown: false }} />
+        <Stack.Screen name="Paysecurely1" component={Paysecurely1} options={{ headerShown: false }} />
+        <Stack.Screen name="Supportchat" component={Supportchat} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

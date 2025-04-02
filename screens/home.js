@@ -78,10 +78,20 @@ const styles = StyleSheet.create({
     paddingTop: Platform.OS === 'ios' ? 50 : 20,
     backgroundColor: '#B1C9EF',
   },
-  header: { flexDirection: 'row', justifyContent: 'space-between', padding: 16 },
-  title: { fontSize: 18, fontWeight: 'bold' },
-  navIcons: { flexDirection: 'row', justifyContent: 'space-around', padding: 16 },
-  iconContainer: { alignItems: 'center' },
+  header: 
+  { flexDirection: 'row', justifyContent: 'space-between', padding: 16 },
+
+  title: {
+     fontSize: 18, 
+     fontWeight: 'bold' },
+
+  navIcons: 
+  { flexDirection: 'row', justifyContent: 'space-around', padding: 16 },
+  iconContainer:
+   { alignItems: 'center' 
+
+   },
+
   iconBox: {
     backgroundColor: '#FFFFFF',
     padding: 16,
@@ -89,27 +99,70 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginBottom: 8,
-    elevation: 3, // For Android shadow
+    elevation: 3, 
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
     shadowRadius: 4,
   },
-  iconText: { marginTop: 4, fontSize: 14 },
-  content: { paddingHorizontal: 16 },
-  promotionCard: { backgroundColor: 'white', padding: 16, borderRadius: 12, marginBottom: 16 },
-  promotionContent: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
-  sectionTitle: { fontSize: 16, fontWeight: 'bold', marginBottom: 8 },
-  description: { fontSize: 14, flex: 1, marginRight: 8 },
-  promoImage: { width: 80, height: 80 },
-  exploreButton: { backgroundColor: '#4682EF', padding: 8, borderRadius: 8, alignItems: 'center', marginTop: 8 },
-  exploreText: { color: '#fff', fontWeight: 'bold' },
-  bestSelling: { marginBottom: 16 },
+  iconText: 
+  { marginTop: 4, 
+    fontSize: 14
+   },
+  content: 
+  { paddingHorizontal: 16
+
+   },
+  promotionCard: 
+  { backgroundColor: 'white',
+     padding: 16,
+      borderRadius: 12,
+       marginBottom: 16
+       },
+  promotionContent: 
+  { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' 
+  },
+  sectionTitle: {
+     fontSize: 16, 
+     fontWeight: 'bold',
+      marginBottom: 8 
+    },
+  description: {
+     fontSize: 14,
+      flex: 1, 
+      marginRight: 8 
+    },
+  promoImage: {
+     width: 80,
+      height: 80
+     },
+  exploreButton: 
+  { backgroundColor: '#4682EF',
+     padding: 8,
+      borderRadius: 8,
+       alignItems: 'center',
+        marginTop: 8 },
+  exploreText:
+   { color: '#fff',
+     fontWeight: 'bold'
+     },
+  bestSelling: {
+     marginBottom: 16
+     },
   card: { backgroundColor: 'white', padding: 16, height:350, borderRadius: 12, alignItems: 'center' },
   squareImage: { width: 120, height: 120, marginBottom: 8 },
-  cardTitle: { fontSize: 14, fontWeight: 'bold', marginBottom: 4 },
-  cardText: { fontSize: 12, textAlign: 'center', marginBottom: 8 },
-  exploreMoreButton: { backgroundColor: '#4682EF', padding: 8, borderRadius: 8 },
+  cardTitle: {
+     fontSize: 14,
+      fontWeight: 'bold', 
+      marginBottom: 4
+     },
+  cardText: { fontSize: 12,
+     textAlign: 'center', 
+     marginBottom: 8 
+    },
+  exploreMoreButton: {
+     backgroundColor: '#4682EF', padding: 8,
+      borderRadius: 8 },
   footer: {
     flexDirection: 'row',
     justifyContent: 'space-around',

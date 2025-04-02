@@ -5,7 +5,7 @@ import { Ionicons } from '@expo/vector-icons';
 const VehicleDetailsPage = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      {/* Header */}
+     
       <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
           <Ionicons name="arrow-back" size={24} color="black" />
@@ -13,7 +13,7 @@ const VehicleDetailsPage = ({ navigation }) => {
         <Text style={styles.headerTitle}>Vehicle Details</Text>
       </View>
 
-      {/* Vehicle Details */}
+    
       <ScrollView style={styles.detailsContainer}>
         <Text style={styles.sectionTitle}>Overview</Text>
         <View style={styles.detailBox}>
@@ -33,7 +33,7 @@ const VehicleDetailsPage = ({ navigation }) => {
         </View>
       </ScrollView>
 
-      {/* Footer Navigation */}
+     
       <View style={styles.footer}>
         <TouchableOpacity style={styles.footerItem} onPress={() => navigation.navigate('Home')}>
           <Ionicons name="home" size={28} color="#4682EF" />
@@ -70,23 +70,30 @@ const styles = StyleSheet.create({
     backgroundColor: '#E8F0FE',
   },
   headerTitle: { marginLeft: 16, fontSize: 18, fontWeight: 'bold' },
-  detailsContainer: { paddingHorizontal: 16, marginTop: 8 },
-  sectionTitle: { fontSize: 16, fontWeight: 'bold', marginBottom: 8 },
+  detailsContainer: { 
+    paddingHorizontal: 16, marginTop: 8 },
+  sectionTitle: { fontSize: 16, fontWeight: 'bold', 
+    marginBottom: 8 },
   detailBox: {
     backgroundColor: '#FFFFFF',
     borderRadius: 12,
     padding: 16,
     marginBottom: 16,
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
+    shadowOffset: { width: 0,
+       height: 2 },
     shadowOpacity: 0.1,
     shadowRadius: 4,
     elevation: 3,
   },
-  subTitle: { fontSize: 14, fontWeight: 'bold', marginBottom: 8 },
+  subTitle: { fontSize: 14,
+     fontWeight: 'bold', 
+     marginBottom: 8 },
   row: { flexDirection: 'row', justifyContent: 'space-between', paddingVertical: 6 },
-  label: { fontSize: 14, color: '#555' },
-  value: { fontSize: 14, color: '#000' },
+  label: { fontSize: 14,
+     color: '#555' },
+  value: { fontSize: 14, 
+    color: '#000' },
   boldValue: { fontWeight: 'bold' },
   footer: {
     flexDirection: 'row',

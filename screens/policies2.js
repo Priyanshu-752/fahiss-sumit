@@ -88,9 +88,12 @@ const styles = StyleSheet.create({
     elevation: 3,
   },
   row: { flexDirection: 'row', justifyContent: 'space-between', paddingVertical: 6 },
-  label: { fontSize: 14, color: '#555' },
-  value: { fontSize: 14, color: '#000' },
-  boldValue: { fontWeight: 'bold' },
+  label: { fontSize: 14,
+     color: '#555' },
+  value: { fontSize: 14, 
+    color: '#000' },
+  boldValue: {
+     fontWeight: 'bold' },
   footer: {
     flexDirection: 'row',
     justifyContent: 'space-around',

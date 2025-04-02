@@ -23,7 +23,11 @@ const registration = ({ navigation }) => {
 
       <ScrollView style={styles.content}>
         {vehicles.map((vehicle) => (
-          <View key={vehicle.id} style={styles.card}>
+          <TouchableOpacity
+            key={vehicle.id}
+            style={styles.card}
+            onPress={() => vehicle.id === 1 ? navigation.navigate('registrationrenew') : null}
+          >
             <Image source={vehicle.icon} style={styles.vehicleImage} />
             <View style={styles.vehicleInfo}>
               <Text style={styles.vehicleName}>{vehicle.name}</Text>
@@ -39,7 +43,7 @@ const registration = ({ navigation }) => {
                 <Ionicons name="checkmark-circle" size={20} color="#32D74B" />
               )}
             </View>
-          </View>
+          </TouchableOpacity>
         ))}
       </ScrollView>
 

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Platform, FlatList } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import supportasi from './supportasi';
+
 
 const supportasi1 = ({ navigation }) => {
   const [selectedVehicles, setSelectedVehicles] = useState([]);
@@ -21,7 +21,7 @@ const supportasi1 = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      {/* Header from supportasi */}
+      
       <View style={styles.headerWrapper}>
         <Ionicons name="arrow-back-outline" size={24} color="#000" onPress={() => navigation.goBack()} />
         <Text style={styles.title}>Assign Someone</Text>
@@ -71,14 +71,43 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 16,
   },
-  title: { fontSize: 18, fontWeight: 'bold', marginLeft: 16 },
-  row: { flexDirection: 'column', paddingVertical: 10 },
-  label: { fontSize: 16, marginBottom: 8 },
-  vehicleButton: { flexDirection: 'row', alignItems: 'center', padding: 10, backgroundColor: '#FFFFFF', borderRadius: 10, marginRight: 10 },
-  vehicleText: { fontSize: 14, marginRight: 5 },
-  input: { backgroundColor: '#FFFFFF', padding: 15, borderRadius: 10, marginBottom: 20 },
-  requestButton: { backgroundColor: '#4682EF', padding: 15, borderRadius: 10, alignItems: 'center' },
-  requestButtonText: { color: '#FFFFFF', fontWeight: 'bold' },
+  title: {
+     fontSize: 18, 
+     fontWeight: 'bold',
+      marginLeft: 16
+     },
+  row: {
+     flexDirection: 'column', paddingVertical: 10 
+    },
+  label: {
+     fontSize: 16,
+      marginBottom: 8
+     },
+  vehicleButton: { 
+    flexDirection: 'row',
+     alignItems: 'center',
+      padding: 10,
+       backgroundColor: '#FFFFFF', borderRadius: 10,
+        marginRight: 10 
+      },
+  vehicleText: { 
+    fontSize: 14,
+     marginRight: 5
+     },
+  input: {
+     backgroundColor: '#FFFFFF', padding: 15, 
+     borderRadius: 10,
+      marginBottom: 20
+     },
+  requestButton: {
+     backgroundColor: '#4682EF', padding: 15,
+      borderRadius: 10,
+       alignItems: 'center' 
+      },
+  requestButtonText: { 
+    color: '#FFFFFF', 
+    fontWeight: 'bold'
+   },
 });
 
 export default supportasi1;
