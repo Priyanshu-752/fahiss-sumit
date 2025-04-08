@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
     borderRadius: 6,
   },
   selectedRadio: {
-    backgroundColor: '#3f51b5',
+    backgroundColor: '#395886',
   },
   optionLabel: {
     flex: 1,

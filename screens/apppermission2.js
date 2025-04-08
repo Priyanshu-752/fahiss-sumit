@@ -1,28 +1,16 @@
-import React, { useEffect, useState } from "react";
-import { StyleSheet, View, Text, Image, TouchableOpacity, Alert } from "react-native";
+import React, { useEffect } from "react";
+import { View, Text, Image, StyleSheet, TouchableOpacity, Alert } from "react-native";
 import * as Location from "expo-location";
 
 const apppermission2 = ({ navigation }) => {
-  const [locationPermission, setLocationPermission] = useState(null);
-
   useEffect(() => {
     requestLocationPermission();
   }, []);
 
   const requestLocationPermission = async () => {
-    const { status } = await Location.requestForegroundPermissionsAsync();
+    let { status } = await Location.requestForegroundPermissionsAsync();
     if (status !== "granted") {
-      Alert.alert(
-        "Location Permission",
-        "Allow Maps to access your location while you are using the app",
-        [
-          { text: "Allow While Using App", onPress: () => requestLocationPermission() },
-          { text: "Allow Once", onPress: () => requestLocationPermission() },
-          { text: "Don't Allow", onPress: () => console.log("Permission Denied") },
-        ]
-      );
-    } else {
-      setLocationPermission(status);
+      Alert.alert("Permission Denied", "Location access was denied.");
     }
   };
 
@@ -42,22 +30,19 @@ const apppermission2 = ({ navigation }) => {
       </View>
 
       <View style={styles.bottomContainer}>
-        <TouchableOpacity onPress={() => navigation.navigate("Home")}>
+        <TouchableOpacity>
           <Text style={styles.skipText}>Skip</Text>
         </TouchableOpacity>
-
         <View style={styles.pagination}>
+          <View style={[styles.dot]} />
           <View style={[styles.dot, styles.activeDot]} />
-          <View style={styles.dot} />
-          <View style={styles.dot} />
+          <View style={[styles.dot]} />
         </View>
-
         <TouchableOpacity
-        
-          style={styles.nextButton}
           onPress={() => navigation.navigate("frame427786")}
+          style={styles.nextButton}
         >
-          <Text style={styles.nextText}>></Text>
+          <Text style={styles.nextText}>&gt;</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -80,6 +65,7 @@ const styles = StyleSheet.create({
   image: {
     width: 250,
     height: 250,
+    tintColor: "white",
   },
   textPlaceholder: {
     marginTop: 80,
@@ -126,10 +112,12 @@ const styles = StyleSheet.create({
     backgroundColor: "#395886",
   },
   nextButton: {
+    width: 50,
+    height: 50,
     backgroundColor: "#395886",
-    paddingHorizontal: 15,
-    paddingVertical: 5,
-    borderRadius: 20,
+    borderRadius: 25,
+    alignItems: "center",
+    justifyContent: "center",
   },
   nextText: {
     fontSize: 18,
@@ -138,4 +126,3 @@ const styles = StyleSheet.create({
 });
 
 export default apppermission2;
- 

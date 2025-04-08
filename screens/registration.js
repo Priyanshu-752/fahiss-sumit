@@ -13,10 +13,12 @@ const registration = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.headerWrapper}>
-        <TouchableOpacity onPress={() => navigation.goBack()}>
-          <Ionicons name="arrow-back" size={24} color="#000" />
-        </TouchableOpacity>
-        <Text style={styles.title}>Registration</Text>
+        <View style={styles.header}>
+          <TouchableOpacity onPress={() => navigation.goBack()}>
+            <Ionicons name="arrow-back" size={24} color="#000" />
+          </TouchableOpacity>
+          <Text style={styles.headerTitle}>Registration</Text>
+        </View>
       </View>
 
       <Text style={styles.subtitle}>Keep track of your vehicle registrations and renewal dates effortlessly</Text>
@@ -49,11 +51,16 @@ const registration = ({ navigation }) => {
 
       <View style={styles.footer}>
         <TouchableOpacity style={styles.footerItem} onPress={() => navigation.navigate('Home')}>
-          <Ionicons name="home" size={28} color="#4682EF" />
-          <Text style={styles.footerText}>Home</Text>
+          <View style={styles.footerIconBoxActive}>
+            <Ionicons name="home-outline" size={28} color="#395886" />
+            <Text style={styles.footerTextActive}>Home</Text>
+          </View>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.footerItem} onPress={() => navigation.navigate('Profile')}>
+          <Ionicons name="person-outline" size={28} color="white" style={{ marginBottom: 6 }} />
         </TouchableOpacity>
         <TouchableOpacity style={styles.footerItem}>
-          <Ionicons name="headset-outline" size={28} color="#000" />
+          <Ionicons name="headset-outline" size={28} color="white" style={{ marginBottom: 6 }} />
         </TouchableOpacity>
       </View>
     </View>
@@ -70,6 +77,13 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     backgroundColor: '#B1C9EF',
   },
+  header: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#B1C9EF',
+    paddingVertical: 8,
+  },
+  headerTitle: { fontSize: 18, fontWeight: 'bold', marginLeft: 16 },
   title: { fontSize: 18, fontWeight: 'bold', marginLeft: 16 },
   subtitle: { padding: 16, fontSize: 14, color: '#6B7280' },
   content: { paddingHorizontal: 16 },
@@ -91,12 +105,24 @@ const styles = StyleSheet.create({
   footer: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    paddingVertical: 16,
+    paddingVertical: 15,
     backgroundColor: '#B1C9EF',
-    borderTopLeftRadius: 30,
-    borderTopRightRadius: 30,
+    alignItems: 'center',
   },
-  footerItem: { alignItems: 'center' },
+  footerItem: { alignItems: 'center', paddingVertical: 8 },
+  footerIconBoxActive: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#EEF2F9',
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+    borderRadius: 20,
+  },
+  footerTextActive: {
+    marginLeft: 8,
+    fontSize: 14,
+    color: '#395886',
+  },
   footerText: { marginTop: 4, fontSize: 12, color: '#4682EF' },
 });
 

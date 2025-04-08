@@ -31,8 +31,12 @@ const supportasi2 = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.headerWrapper}>
-        <Ionicons name="arrow-back-outline" size={24} color="#000" onPress={() => navigation.goBack()} />
-        <Text style={styles.title}>Assign Someone</Text>
+        <View style={styles.header}>
+          <TouchableOpacity onPress={() => navigation.goBack()}>
+            <Ionicons name="arrow-back" size={24} color="#000" />
+          </TouchableOpacity>
+          <Text style={styles.headerTitle}>Assign Someone</Text>
+        </View>
       </View>
 
       <FlatList
@@ -59,46 +63,78 @@ const supportasi2 = ({ navigation }) => {
     </View>
   );
 };
-
 const styles = StyleSheet.create({
-  container: { 
+  container: {
     flex: 1,
-     padding: 20,
-      backgroundColor: '#E5EFFF'
-     },
+    paddingHorizontal: 16,
+    paddingTop: 16,
+    backgroundColor: '#F9FAFB'
+  },
   headerWrapper: {
     paddingTop: Platform.OS === 'ios' ? 50 : 20,
     backgroundColor: '#B1C9EF',
     flexDirection: 'row',
     alignItems: 'center',
-    padding: 16,
+    paddingHorizontal: 16,
+    paddingBottom: 16,
   },
-  title: {
-     fontSize: 18,
-      fontWeight: 'bold',
-       marginLeft: 16
-       },
-  helperCard: { 
-    backgroundColor: '#FFFFFF', borderRadius: 10,
-     padding: 16, 
-     marginVertical: 10, 
-     elevation: 2
-     },
-  headerRow: { flexDirection:
-     'row', justifyContent: 'space-between', 
-     marginBottom: 8 },
-  helperName: { 
-    fontSize: 16, 
-    fontWeight: 'bold' },
-  removeText: { color: '#FF5C5C' 
+  header: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingVertical: 16,
+    // Add justifyContent to control spacing
+    justifyContent: 'flex-start', // Align items to the start, title will be next
+  },
+  headerTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginLeft: 16
+  },
+  title: { // Kept for potential future use
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginLeft: 16
+  },
+  helperCard: {
+    backgroundColor: '#FFFFFF',
+    borderRadius: 12,
+    padding: 16,
+    marginVertical: 8,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 3
+  },
+  headerRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: 12
+  },
+  helperName: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#333'
+  },
+  removeText: { color: '#FF5C5C'
 
   },
-  helperDetail: { fontSize: 14,
-     color: '#666666' },
+  helperDetail: {
+    fontSize: 14,
+    color: '#666666',
+    marginBottom: 4
+  },
   detailsWrapper: { marginTop: 10 },
-  detailItem: { fontSize: 14, marginBottom: 5 },
-  insuranceStatus: { fontSize: 14, color: '#FFA500',
-     marginBottom: 5 },
+  detailItem: {
+    fontSize: 14,
+    marginBottom: 3,
+    color: '#555'
+  },
+  insuranceStatus: {
+    fontSize: 14,
+    color: '#FFA500',
+    marginBottom: 3
+  },
 });
 
 export default supportasi2;

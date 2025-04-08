@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, Image, StyleSheet, FlatList } from 'react-native';
+import { View, Text, TouchableOpacity, Image, StyleSheet, FlatList, Platform } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import IDVSlider from './IDVSlider';
+import { Ionicons } from '@expo/vector-icons';
 
-const RegistrationRenew1 = ({ navigation }) => { 
+const RegistrationRenew1 = ({ navigation }) => {
   const [idvCover, setIdvCover] = useState('Select IDV');
   const [car, setCar] = useState('Audi A3');
   const [sortBy, setSortBy] = useState('Low to high');
@@ -17,10 +18,12 @@ const RegistrationRenew1 = ({ navigation }) => {
 
   const renderHeader = () => (
     <View style={styles.headerWrapper}>
-      <TouchableOpacity onPress={() => {}}>
-        <Text style={styles.backIcon}>◀</Text>
-      </TouchableOpacity>
-      <Text style={styles.title}>Registration Renewal</Text>
+      <View style={styles.header}>
+        <TouchableOpacity onPress={() => navigation.goBack()}>
+          <Ionicons name="arrow-back" size={24} color="#000" />
+        </TouchableOpacity>
+        <Text style={styles.headerTitle}>Registration Renewal</Text>
+      </View>
     </View>
   );
 
@@ -89,9 +92,9 @@ const RegistrationRenew1 = ({ navigation }) => {
         )}
       />
       <IDVSlider visible={isSliderVisible} onClose={() => setIsSliderVisible(false)} />
-      <TouchableOpacity 
-        style={styles.inspectionButton} 
-        onPress={() => navigation.navigate('VehicleTechnicalInspection')} 
+      <TouchableOpacity
+        style={styles.inspectionButton}
+        onPress={() => navigation.navigate('VehicleTechnicalInspection')}
       >
         <Text style={styles.inspectionButtonText}>Inspection</Text>
       </TouchableOpacity>
@@ -101,19 +104,22 @@ const RegistrationRenew1 = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   headerWrapper: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingTop: 60,
-    paddingBottom: 16,
-    paddingHorizontal: 16,
+    paddingTop: Platform.OS === 'ios' ? 50 : 20,
     backgroundColor: '#B1C9EF',
   },
-  backIcon: { fontSize: 18, marginRight: 8 },
-  title: { fontSize: 18, fontWeight: 'bold' },
-  filterContainer: { 
-    flexDirection: 'row', 
-    justifyContent: 'space-between', 
-    padding: 16, 
+  header: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 16,
+    backgroundColor: '#B1C9EF',
+    paddingBottom: 16,
+    paddingVertical: 16,
+  },
+  headerTitle: { marginLeft: 16, fontSize: 18, fontWeight: 'bold' },
+  filterContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    padding: 16,
     backgroundColor: '#E0E8F9',
     borderBottomWidth: 1,
     borderBottomColor: '#D1D9E6'
@@ -139,12 +145,12 @@ const styles = StyleSheet.create({
   features: { color: '#555', fontSize: 14, marginBottom: 3 },
   priceContainer: { flexDirection: 'row', justifyContent: 'space-between', marginTop: 5 },
   price: { fontSize: 16, fontWeight: 'bold', color: '#28a745' },
-  monthly: { fontSize: 14, color: '#007bff' },
-  setIDVButton: { color: '#007bff', marginTop: 10 },
+  monthly: { fontSize: 14, color: '#395886' },
+  setIDVButton: { color: '#395886', marginTop: 10 },
   viewFeaturesButton: { marginTop: 10 },
-  viewFeaturesText: { color: '#007bff' },
+  viewFeaturesText: { color: '#395886' },
   inspectionButton: {
-    backgroundColor: '#3f51b5',
+    backgroundColor: '#395886',
     padding: 16,
     borderRadius: 25,
     margin: 16,

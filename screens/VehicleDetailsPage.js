@@ -1,19 +1,20 @@
 import React from 'react';
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Platform } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
 const VehicleDetailsPage = ({ navigation }) => {
   return (
     <View style={styles.container}>
-     
-      <View style={styles.header}>
-        <TouchableOpacity onPress={() => navigation.goBack()}>
-          <Ionicons name="arrow-back" size={24} color="black" />
-        </TouchableOpacity>
-        <Text style={styles.headerTitle}>Vehicle Details</Text>
+
+      <View style={styles.headerWrapper}>
+        <View style={styles.header}>
+          <TouchableOpacity onPress={() => navigation.goBack()}>
+            <Ionicons name="arrow-back" size={24} color="black" />
+          </TouchableOpacity>
+          <Text style={styles.headerTitle}>Vehicle Details</Text>
+        </View>
       </View>
 
-    
       <ScrollView style={styles.detailsContainer}>
         <Text style={styles.sectionTitle}>Overview</Text>
         <View style={styles.detailBox}>
@@ -33,19 +34,18 @@ const VehicleDetailsPage = ({ navigation }) => {
         </View>
       </ScrollView>
 
-     
       <View style={styles.footer}>
         <TouchableOpacity style={styles.footerItem} onPress={() => navigation.navigate('Home')}>
-          <Ionicons name="home" size={28} color="#4682EF" />
-          <Text style={styles.footerText}>Home</Text>
+          <View style={styles.footerIconBoxActive}>
+            <Ionicons name="home-outline" size={28} color="#395886" />
+            <Text style={styles.footerTextActive}>Home</Text>
+          </View>
         </TouchableOpacity>
         <TouchableOpacity style={styles.footerItem} onPress={() => navigation.navigate('Profile')}>
-          <Ionicons name="person-outline" size={28} color="#000" />
-          <Text style={styles.footerText}>Profile</Text>
+          <Ionicons name="person-outline" size={28} color="white" style={{ marginBottom: 6 }} />
         </TouchableOpacity>
         <TouchableOpacity style={styles.footerItem} onPress={() => navigation.navigate('Support')}>
-          <Ionicons name="headset-outline" size={28} color="#000" />
-          <Text style={styles.footerText}>Support</Text>
+          <Ionicons name="headset-outline" size={28} color="white" style={{ marginBottom: 6 }} />
         </TouchableOpacity>
       </View>
     </View>
@@ -61,50 +61,87 @@ const DetailRow = ({ label, value, boldValue }) => (
 
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#F9FAFB' },
+  headerWrapper: {
+    paddingTop: Platform.OS === 'ios' ? 50 : 20,
+    backgroundColor: '#B1C9EF',
+  },
   header: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingTop: 50,
-    paddingBottom: 16,
     paddingHorizontal: 16,
-    backgroundColor: '#E8F0FE',
+    backgroundColor: '#B1C9EF',
+    paddingBottom: 16,
+    paddingVertical: 16,
   },
   headerTitle: { marginLeft: 16, fontSize: 18, fontWeight: 'bold' },
-  detailsContainer: { 
-    paddingHorizontal: 16, marginTop: 8 },
-  sectionTitle: { fontSize: 16, fontWeight: 'bold', 
-    marginBottom: 8 },
+  detailsContainer: {
+    paddingHorizontal: 16, marginTop: 8
+  },
+  sectionTitle: {
+    fontSize: 16, fontWeight: 'bold',
+    marginBottom: 8
+  },
   detailBox: {
     backgroundColor: '#FFFFFF',
     borderRadius: 12,
     padding: 16,
     marginBottom: 16,
     shadowColor: '#000',
-    shadowOffset: { width: 0,
-       height: 2 },
+    shadowOffset: {
+      width: 0,
+      height: 2
+    },
     shadowOpacity: 0.1,
     shadowRadius: 4,
     elevation: 3,
   },
-  subTitle: { fontSize: 14,
-     fontWeight: 'bold', 
-     marginBottom: 8 },
+  subTitle: {
+    fontSize: 14,
+    fontWeight: 'bold',
+    marginBottom: 8
+  },
   row: { flexDirection: 'row', justifyContent: 'space-between', paddingVertical: 6 },
-  label: { fontSize: 14,
-     color: '#555' },
-  value: { fontSize: 14, 
-    color: '#000' },
+  label: {
+    fontSize: 14,
+    color: '#555'
+  },
+  value: {
+    fontSize: 14,
+    color: '#000'
+  },
   boldValue: { fontWeight: 'bold' },
   footer: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    paddingVertical: 16,
-    backgroundColor: '#B0C4DE',
-    borderTopLeftRadius: 30,
-    borderTopRightRadius: 30,
+    paddingVertical: 15,
+    backgroundColor: '#B1C9EF',
+    alignItems: 'center',
   },
-  footerItem: { alignItems: 'center' },
-  footerText: { marginTop: 4, fontSize: 12, color: '#4682EF' },
+  footerItem: {
+    alignItems: 'center',
+    paddingVertical: 8,
+  },
+  footerIconBoxActive: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#EEF2F9',
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+    borderRadius: 20,
+  },
+  footerTextActive: {
+    marginLeft: 8,
+    fontSize: 14,
+    color: '#395886',
+  },
+  footerIconBox: {
+    alignItems: 'center',
+  },
+  footerText: {
+    fontSize: 12,
+    color: '#395886',
+    marginTop: 4,
+  },
 });
 
 export default VehicleDetailsPage;

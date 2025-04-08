@@ -9,6 +9,10 @@ const CivilIDInput = ({ navigation }) => {
 
   const maskedCivilID = civilID.replace(/./g, "●");
 
+  const handleHelpPress = () => {
+    navigation.navigate("supporthm");
+  };
+
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <View style={styles.container}>
@@ -33,14 +37,14 @@ const CivilIDInput = ({ navigation }) => {
         </View>
 
         <TouchableOpacity
-        onPress={() => navigation.navigate("home")}   
+          onPress={() => navigation.navigate("home")}
           style={[
             styles.loginButton,
             { backgroundColor: civilID.length === 12 ? "#395886" : "#D5DEEF" },
           ]}
         >
           <Text
-          style={styles.loginText}>Log in</Text>
+            style={styles.loginText}>Log in</Text>
         </TouchableOpacity>
 
         <View style={styles.termsContainer}>
@@ -48,7 +52,7 @@ const CivilIDInput = ({ navigation }) => {
           <Text style={styles.termsText}>I agree to Fahiss Terms and Services</Text>
         </View>
 
-        <TouchableOpacity>
+        <TouchableOpacity onPress={handleHelpPress}>
           <Text style={styles.helpText}>Help</Text>
         </TouchableOpacity>
       </View>

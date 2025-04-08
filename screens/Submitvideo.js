@@ -76,11 +76,13 @@ const styles = StyleSheet.create({
   videoContainer: {
     width: '90%',
     aspectRatio: 16 / 9,
-    backgroundColor: '#3f51b5',
+    backgroundColor: '#395886',
     borderRadius: 10,
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 30,
+    width:357,
+    height: 200,
   },
   videoPlaceholderText: {
     color: '#fff',
@@ -92,7 +94,7 @@ const styles = StyleSheet.create({
     opacity: 0.8,
   },
   submitButton: {
-    backgroundColor: '#3f51b5',
+    backgroundColor: '#395886',
     padding: 18,
     borderRadius: 25,
     width: '90%',

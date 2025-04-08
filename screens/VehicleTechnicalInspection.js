@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, ScrollView, Platform, Dimensions } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+
+const { height } = Dimensions.get('window');
 
 const VehicleTechnicalInspection = ({ navigation }) => {
   const [checklist, setChecklist] = useState([
@@ -16,33 +18,43 @@ const VehicleTechnicalInspection = ({ navigation }) => {
     ));
   };
 
+  const allChecked = checklist.every(item => item.checked);
+
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-        <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
-          <Ionicons name="arrow-back" size={24} color="#000" />
-        </TouchableOpacity>
-        <Text style={styles.headerTitle}>Registration Renewal</Text>
+      <View style={styles.headerWrapper}>
+        <View style={styles.header}>
+          <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
+            <Ionicons name="arrow-back" size={24} color="#000" />
+          </TouchableOpacity>
+          <Text style={styles.headerTitle}>Registration Renewal</Text>
+        </View>
       </View>
 
       <ScrollView style={styles.content}>
-        <View style={styles.card}>
-          <Text style={styles.cardTitle}>Vehicle Technical Inspection</Text>
-          <Text style={styles.description}>
-            Before starting, confirm that you have completed these following steps:
-          </Text>
-          {checklist.map(item => (
-            <TouchableOpacity key={item.id} style={styles.listItem} onPress={() => toggleCheck(item.id)}>
-              <Ionicons name={item.checked ? 'checkbox' : 'square-outline'} size={24} color="#000" />
-              <Text style={styles.listItemText}>{item.text}</Text>
-            </TouchableOpacity>
-          ))}
+        <View style={styles.cardContainer}>
+          <View style={styles.card}>
+            <Text style={styles.cardTitle}>Vehicle Technical Inspection</Text>
+            <Text style={styles.description}>
+              Before starting, confirm that you have completed these following steps:
+            </Text>
+            {checklist.map(item => (
+              <TouchableOpacity key={item.id} style={styles.listItem} onPress={() => toggleCheck(item.id)}>
+                <Ionicons name={item.checked ? 'checkbox' : 'square-outline'} size={24} color="#000" />
+                <Text style={styles.listItemText}>{item.text}</Text>
+              </TouchableOpacity>
+            ))}
+          </View>
+
+          <TouchableOpacity
+            style={[styles.nextButton, !allChecked && styles.nextButtonDisabled]}
+            onPress={() => allChecked && navigation.navigate('VehicleTechnicalInspection1')}
+            disabled={!allChecked}
+          >
+            <Text style={styles.nextButtonText}>Next</Text>
+          </TouchableOpacity>
         </View>
       </ScrollView>
-
-      <TouchableOpacity style={styles.nextButton} onPress={() => navigation.navigate('VehicleTechnicalInspection1')}>
-        <Text style={styles.nextButtonText}>Next</Text>
-      </TouchableOpacity>
     </View>
   );
 };
@@ -50,16 +62,18 @@ const VehicleTechnicalInspection = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#EEF2F9',
+  },
+  headerWrapper: {
+    paddingTop: Platform.OS === 'ios' ? 50 : 20,
+    backgroundColor: '#B1C9EF',
   },
   header: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingVertical: 40,
+    paddingVertical: 16,
     paddingHorizontal: 16,
     backgroundColor: '#B1C9EF',
-    borderBottomWidth: 1,
-    borderBottomColor: '#ddd',
   },
   backButton: {
     marginRight: 16,
@@ -70,12 +84,22 @@ const styles = StyleSheet.create({
   },
   content: {
     flex: 1,
+    paddingHorizontal: 16,
+    paddingTop: 16,
+  },
+  cardContainer: {
+    backgroundColor: 'white',
+    borderRadius: 12,
     padding: 16,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 5,
+    elevation: 3,
+    minHeight: height * 0.83, 
   },
   card: {
-    backgroundColor: 'white',
-    borderRadius: 8,
-    padding: 16,
+    marginBottom: 20,
   },
   cardTitle: {
     fontSize: 22,
@@ -83,8 +107,9 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   description: {
-    fontSize: 18,
-    marginBottom: 25, 
+    fontSize: 16,
+    marginBottom: 25,
+    color: '#333',
   },
   listItem: {
     flexDirection: 'row',
@@ -93,19 +118,24 @@ const styles = StyleSheet.create({
   },
   listItemText: {
     marginLeft: 8,
-    fontSize: 18,
+    fontSize: 16,
+    color: '#333',
   },
   nextButton: {
-    backgroundColor: '#3f51b5',
+    backgroundColor: '#395886',
     padding: 16,
     borderRadius: 25,
-    margin: 16,
     alignItems: 'center',
+    marginTop: 30,
+    top:30,
   },
   nextButtonText: {
     color: '#fff',
     fontSize: 18,
     fontWeight: 'bold',
+  },
+  nextButtonDisabled: {
+    backgroundColor: '#ccc',
   },
 });
 

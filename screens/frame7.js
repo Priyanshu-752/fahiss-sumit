@@ -4,6 +4,11 @@ import Checkbox from "expo-checkbox";
 
 const frame7 =({navigation}) => {
   const [isChecked, setChecked] = useState(false);
+
+  const handleSkipPress = () => {
+    navigation.navigate("home"); 
+  };
+
   return(
     <View style={styles.container}>
       <Text style={styles.appTitle}>Fahiss</Text>
@@ -17,8 +22,9 @@ const frame7 =({navigation}) => {
       </TouchableOpacity>
 
       <TouchableOpacity
-      
-      onPress={() => navigation.navigate("CivilIDInput")}   style={styles.loginButton}>
+        onPress={() => navigation.navigate("CivilIDInput")}
+        style={styles.loginButton}
+      >
         <Text style={styles.loginText}>Log in</Text>
       </TouchableOpacity>
 
@@ -29,9 +35,9 @@ const frame7 =({navigation}) => {
         </Text>
       </View>
 
-      <TouchableOpacity>
-  <Text style={styles.skipText}>I'll do it later, Skip now</Text>
-</TouchableOpacity>
+      <TouchableOpacity onPress={handleSkipPress}>
+        <Text style={styles.skipText}>I'll do it later, Skip now</Text>
+      </TouchableOpacity>
 
     </View>
   );
@@ -52,7 +58,7 @@ const styles= StyleSheet.create({
     fontWeight:"bold",
     color:"white",
     marginBottom:20,
-    
+
   },
 
   imageContainer:{
@@ -103,8 +109,6 @@ const styles= StyleSheet.create({
     width:247,
     height:40,
     top:4,
-
-
   },
   termsContainer: {
     flexDirection: "row",

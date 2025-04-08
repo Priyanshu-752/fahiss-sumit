@@ -62,13 +62,10 @@ const styles = StyleSheet.create({
     paddingTop: Platform.OS === "ios" ? 50 : 20,
     backgroundColor: "#B1C9EF",
     paddingBottom: 10,
-    borderBottomLeftRadius: 20,
-    borderBottomRightRadius: 20,
+   
     elevation: 5, 
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.2,
-    shadowRadius: 4,
+   
+    
   },
   header: { 
     flexDirection: "row", 

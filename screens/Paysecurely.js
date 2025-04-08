@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   payButton: {
-    backgroundColor: '#3f51b5',
+    backgroundColor: '#395886',
     padding: 18,
     borderRadius: 25,
     margin: 16,

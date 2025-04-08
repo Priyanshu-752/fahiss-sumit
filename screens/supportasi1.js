@@ -21,10 +21,14 @@ const supportasi1 = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      
+
       <View style={styles.headerWrapper}>
-        <Ionicons name="arrow-back-outline" size={24} color="#000" onPress={() => navigation.goBack()} />
-        <Text style={styles.title}>Assign Someone</Text>
+        <View style={styles.header}>
+          <TouchableOpacity onPress={() => navigation.goBack()}>
+            <Ionicons name="arrow-back" size={24} color="#000" />
+          </TouchableOpacity>
+          <Text style={styles.headerTitle}>Assign Someone</Text>
+        </View>
       </View>
 
       <View style={styles.row}>
@@ -67,47 +71,57 @@ const styles = StyleSheet.create({
   headerWrapper: {
     paddingTop: Platform.OS === 'ios' ? 50 : 20,
     backgroundColor: '#B1C9EF',
+  },
+  header: {
     flexDirection: 'row',
     alignItems: 'center',
-    padding: 16,
+    paddingHorizontal: 16,
+    backgroundColor: '#B1C9EF',
+    paddingBottom: 16,
+    paddingVertical: 16,
   },
-  title: {
-     fontSize: 18, 
-     fontWeight: 'bold',
-      marginLeft: 16
-     },
+  headerTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginLeft: 16
+  },
+  title: { 
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginLeft: 16
+  },
   row: {
-     flexDirection: 'column', paddingVertical: 10 
-    },
+    flexDirection: 'column', paddingVertical: 10
+  },
   label: {
-     fontSize: 16,
-      marginBottom: 8
-     },
-  vehicleButton: { 
+    fontSize: 16,
+    marginBottom: 8
+  },
+  vehicleButton: {
     flexDirection: 'row',
-     alignItems: 'center',
-      padding: 10,
-       backgroundColor: '#FFFFFF', borderRadius: 10,
-        marginRight: 10 
-      },
-  vehicleText: { 
+    alignItems: 'center',
+    padding: 10,
+    backgroundColor: '#FFFFFF', borderRadius: 10,
+    marginRight: 10
+  },
+  vehicleText: {
     fontSize: 14,
-     marginRight: 5
-     },
+    marginRight: 5
+  },
   input: {
-     backgroundColor: '#FFFFFF', padding: 15, 
-     borderRadius: 10,
-      marginBottom: 20
-     },
+    backgroundColor: '#FFFFFF', padding: 15,
+    borderRadius: 10,
+    marginBottom: 20
+  },
   requestButton: {
-     backgroundColor: '#4682EF', padding: 15,
-      borderRadius: 10,
-       alignItems: 'center' 
-      },
-  requestButtonText: { 
-    color: '#FFFFFF', 
+    backgroundColor: '#4682EF', padding: 15,
+    borderRadius: 10,
+    alignItems: 'center'
+  },
+  requestButtonText: {
+    color: '#FFFFFF',
     fontWeight: 'bold'
-   },
+  },
 });
 
 export default supportasi1;

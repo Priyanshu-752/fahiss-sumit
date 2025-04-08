@@ -36,9 +36,11 @@ const home = ({ navigation }) => {
             <Text style={styles.description}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</Text>
             <Image source={require('./picture.png')} style={styles.promoImage} />
           </View>
-          <TouchableOpacity style={styles.exploreButton}>
-            <Text style={styles.exploreText}>Explore</Text>
-          </TouchableOpacity>
+          <View style={styles.exploreButtonContainer}>
+            <TouchableOpacity style={styles.exploreButton}>
+              <Text style={styles.exploreText}>Explore</Text>
+            </TouchableOpacity>
+          </View>
         </View>
 
         <View style={styles.bestSelling}>
@@ -48,7 +50,7 @@ const home = ({ navigation }) => {
             <Text style={styles.cardTitle}>Lorem ipsum</Text>
             <Text style={styles.cardText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor....see more</Text>
             <TouchableOpacity style={styles.exploreMoreButton}>
-              <Text style={styles.exploreText}>Explore More</Text>
+              <Text style={styles.exploreMoreText}>Explore More</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -56,16 +58,16 @@ const home = ({ navigation }) => {
 
       <View style={styles.footer}>
         <TouchableOpacity style={styles.footerItem}>
-          <View style={styles.footerIconBox}>
-            <Ionicons name="home" size={28} color="#4682EF" />
-            <Text style={styles.footerText}>Home</Text>
+          <View style={styles.footerIconBoxActive}>
+            <Ionicons name="home-outline" size={28} color="#395886" />
+            <Text style={styles.footerTextActive}>Home</Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity style={styles.footerItem} onPress={() => navigation.navigate("profile1")} >
-          <Ionicons name="person-outline" size={28} color="#000"  />
+          <Ionicons name="person-outline" size={28} color="white" style={{ marginBottom: 6 }} />
         </TouchableOpacity>
         <TouchableOpacity style={styles.footerItem} onPress={() => navigation.navigate("supporthm")}>
-          <Ionicons name="headset-outline" size={28} color="#000" />
+          <Ionicons name="headset-outline" size={28} color="white" style={{ marginBottom: 6 }} />
         </TouchableOpacity>
       </View>
     </View>
@@ -73,24 +75,24 @@ const home = ({ navigation }) => {
 };
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#F9FAFB' },
+  container: { flex: 1, backgroundColor: '#EEF2F9' },
   headerWrapper: {
     paddingTop: Platform.OS === 'ios' ? 50 : 20,
     backgroundColor: '#B1C9EF',
   },
-  header: 
+  header:
   { flexDirection: 'row', justifyContent: 'space-between', padding: 16 },
 
   title: {
-     fontSize: 18, 
-     fontWeight: 'bold' },
+    fontSize: 18,
+    fontWeight: 'bold' },
 
-  navIcons: 
+  navIcons:
   { flexDirection: 'row', justifyContent: 'space-around', padding: 16 },
   iconContainer:
-   { alignItems: 'center' 
+    { alignItems: 'center'
 
-   },
+    },
 
   iconBox: {
     backgroundColor: '#FFFFFF',
@@ -99,88 +101,117 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginBottom: 8,
-    elevation: 3, 
+    elevation: 3,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
     shadowRadius: 4,
   },
-  iconText: 
-  { marginTop: 4, 
+  iconText:
+  { marginTop: 4,
     fontSize: 14
-   },
-  content: 
+    },
+  content:
   { paddingHorizontal: 16
 
-   },
-  promotionCard: 
+    },
+  promotionCard:
   { backgroundColor: 'white',
-     padding: 16,
-      borderRadius: 12,
-       marginBottom: 16
-       },
-  promotionContent: 
-  { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' 
-  },
+    padding: 16,
+    borderRadius: 12,
+      marginBottom: 16
+      },
+  promotionContent:
+  { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 },
   sectionTitle: {
-     fontSize: 16, 
-     fontWeight: 'bold',
-      marginBottom: 8 
+    fontSize: 16,
+    fontWeight: 'bold',
+    marginBottom: 8
     },
   description: {
-     fontSize: 14,
-      flex: 1, 
-      marginRight: 8 
+    fontSize: 14,
+    flex: 1,
+    marginRight: 8
     },
   promoImage: {
-     width: 80,
-      height: 80
-     },
-  exploreButton: 
-  { backgroundColor: '#4682EF',
-     padding: 8,
-      borderRadius: 8,
-       alignItems: 'center',
-        marginTop: 8 },
+    width: 80,
+    height: 80,
+    },
+  exploreButtonContainer: {
+    alignItems: 'flex-start',
+  },
+  exploreButton:
+  { backgroundColor: '#395886',
+    borderRadius: 8,
+    alignItems: 'center',
+    width: 80,
+    paddingVertical: 8,
+    left:270,
+    },
   exploreText:
-   { color: '#fff',
-     fontWeight: 'bold'
-     },
+    { color: '#fff',
+      fontWeight: 'bold',
+      fontSize: 12,
+    },
   bestSelling: {
-     marginBottom: 16
-     },
+    marginBottom: 16
+    },
   card: { backgroundColor: 'white', padding: 16, height:350, borderRadius: 12, alignItems: 'center' },
   squareImage: { width: 120, height: 120, marginBottom: 8 },
   cardTitle: {
-     fontSize: 14,
-      fontWeight: 'bold', 
-      marginBottom: 4
-     },
-  cardText: { fontSize: 12,
-     textAlign: 'center', 
-     marginBottom: 8 
+    fontSize: 16,
+    fontWeight: 'bold',
+    marginBottom: 6
+    },
+  cardText: { fontSize: 14,
+    textAlign: 'center',
+    marginBottom: 12
     },
   exploreMoreButton: {
-     backgroundColor: '#4682EF', padding: 8,
-      borderRadius: 8 },
+    backgroundColor: '#B1C9EF',
+    width:163,
+    height:48,
+    borderRadius: 9,
+    alignItems: 'center',
+    justifyContent: 'center',
+   },
+  exploreMoreText: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
   footer: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    paddingVertical: 16,
+    paddingVertical: 15,
     backgroundColor: '#B1C9EF',
-    borderTopLeftRadius: 30,
-    borderTopRightRadius: 30,
+    alignItems: 'center',
   },
-  footerItem: { alignItems: 'center' },
-  footerIconBox: {
+  footerItem: {
+    alignItems: 'center',
+    paddingVertical: 8,
+  },
+  footerIconBoxActive: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#EEF2F9',
     paddingHorizontal: 16,
     paddingVertical: 8,
     borderRadius: 20,
   },
-  footerText: { marginLeft: 8, fontSize: 12, color: '#4682EF' },
+  footerTextActive: {
+    marginLeft: 8,
+    fontSize: 14,
+    color: '#395886',
+  },
+    footerIconBox: {
+    alignItems: 'center',
+  },
+  footerText: {
+    fontSize: 12,
+    color: '#395886',
+    marginTop: 4,
+  },
 });
 
 export default home;

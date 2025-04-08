@@ -7,14 +7,18 @@ const supportasi = ({ navigation }) => {
     { label: 'Assign a Helper', onPress: () => navigation.navigate('supportasi1')  },
     { label: 'Assigned Car', onPress: () => {} },
     { label: 'Helper', onPress: () => navigation.navigate('supportasi2') },
-    
+
   ];
 
   return (
     <View style={styles.container}>
       <View style={styles.headerWrapper}>
-        <Ionicons name="arrow-back-outline" size={24} color="#000" onPress={() => navigation.goBack()} />
-        <Text style={styles.title}>Assign Someone</Text>
+        <View style={styles.header}>
+          <TouchableOpacity onPress={() => navigation.goBack()}>
+            <Ionicons name="arrow-back" size={24} color="#000" />
+          </TouchableOpacity>
+          <Text style={styles.headerTitle}>Assign Someone</Text>
+        </View>
       </View>
 
       <View style={styles.faqList}>
@@ -34,12 +38,17 @@ const styles = StyleSheet.create({
   headerWrapper: {
     paddingTop: Platform.OS === 'ios' ? 50 : 20,
     backgroundColor: '#B1C9EF',
+  },
+  header: {
     flexDirection: 'row',
     alignItems: 'center',
-    padding: 16,
-   
+    paddingHorizontal: 16,
+    backgroundColor: '#B1C9EF',
+    paddingBottom: 16,
+    paddingVertical: 16,
   },
-  title: { fontSize: 18, fontWeight: 'bold', marginLeft: 16 },
+  headerTitle: { fontSize: 18, fontWeight: 'bold', marginLeft: 16 },
+  title: { fontSize: 18, fontWeight: 'bold', marginLeft: 16 }, 
   faqList: { paddingHorizontal: 16, paddingTop: 16 },
   faqItem: {
     flexDirection: 'row',

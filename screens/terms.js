@@ -59,10 +59,7 @@ const styles = StyleSheet.create({
     paddingBottom: 10,
     
     elevation: 5,
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.2,
-    shadowRadius: 4,
+    
   },
   header: {
     flexDirection: "row",

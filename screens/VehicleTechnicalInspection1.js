@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   nextButton: {
-    backgroundColor: '#3f51b5',
+    backgroundColor: '#395886',
     padding: 16,
     borderRadius: 25,
     margin: 16,

@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
     color: '#888',
   },
   newChatButton: {
-    backgroundColor: '#3f51b5',
+    backgroundColor: '#395886',
     padding: 18,
     borderRadius: 25,
     margin: 16,

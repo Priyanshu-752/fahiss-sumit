@@ -1,35 +1,37 @@
-
 import React from "react";
-import { StyleSheet,Image, Text, View, TouchableOpacity } from "react-native";
+import { StyleSheet, Image, Text, View, TouchableOpacity } from "react-native";
 
-
-const splash3 = ({navigation}) => {
+const splash3 = ({ navigation }) => {
   return (
     <View style={styles.container}>
-    <View style={styles.imageContainer}>
-      <Image source={require("./gallery.png")} style={styles.image}/>
-    </View>
-<View style={styles.textPlaceholder}>
-  <View style={styles.line}/>
-    <View style={styles.smallLinesContainer}>
-      <View style={styles.smallLine}/>
-      <View style={styles.smallLine}/>
-      <View style={styles.smallLine}></View>
-</View>
-    </View>
-    <View style={styles.bottomContainer}>
-      <TouchableOpacity>
-        <Text style={styles.skipText}>Skip</Text>
-      </TouchableOpacity>
-        <View style={styles.pagination}>
-          <View style={[styles.dot,styles.activeDot]}/>
-          <View style={[styles.dot,styles.activeDot]}/>
-          <View style={[styles.dot,styles.activeDot]}/>
-          </View>
-        <TouchableOpacity  onPress={() => navigation.navigate("apppermission1")} style={styles.nextButton}>
-        <Text style={styles.nextText}>></Text>
+      <View style={styles.imageContainer}>
+        <Image source={require("./gallery.png")} style={styles.image} />
+      </View>
+
+      <View style={styles.textPlaceholder}>
+        <View style={styles.line} />
+        <View style={styles.smallLinesContainer}>
+          <View style={styles.smallLine} />
+          <View style={styles.smallLine} />
+          <View style={styles.smallLine} />
+        </View>
+      </View>
+
+      <View style={styles.bottomContainer}>
+        <TouchableOpacity>
+          <Text style={styles.skipText}>Skip</Text>
         </TouchableOpacity>
-    </View>
+
+        <View style={styles.pagination}>
+          <View style={[styles.dot, styles.activeDot]} />
+          <View style={[styles.dot, styles.activeDot]} />
+          <View style={[styles.dot, styles.activeDot]} />
+        </View>
+
+        <TouchableOpacity onPress={() => navigation.navigate("apppermission1")} style={styles.nextButton}>
+          <Text style={styles.nextText}>&gt;</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
@@ -44,7 +46,7 @@ const styles = StyleSheet.create({
   imageContainer: {
     marginTop: 0,
     alignItems: "center",
-    width:260,
+    width: 260,
     height: 260,
   },
   image: {
@@ -53,7 +55,7 @@ const styles = StyleSheet.create({
     tintColor: "white",
   },
   textPlaceholder: {
-    marginTop: 120,
+    marginTop: 70,
     alignItems: "center",
   },
   line: {

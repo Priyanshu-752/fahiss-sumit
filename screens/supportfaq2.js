@@ -2,29 +2,32 @@ import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Platform } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
-const supportfaq2 = ({ navigation }) => {
+const supportfaq2 = ({ navigation, route }) => {
+  const { question, answer } = route.params || { question: 'What is Pet parents?', answer: 'Lorem ipsum dolor sit amet. Eos sint obcaecati ad consequuntur odit qui iure quod. Hic nemo repudiandae aut maiores praesentium nam enim error ut numquam dignissimos.' };
+
   return (
     <View style={styles.container}>
-     
+
       <View style={styles.headerWrapper}>
-        <TouchableOpacity onPress={() => navigation.goBack()}>
-          <Ionicons name="arrow-back-outline" size={24} color="#000" />
-        </TouchableOpacity>
-        <Text style={styles.title}>FAQs</Text>
+        <View style={styles.header}>
+          <TouchableOpacity onPress={() => navigation.goBack()}>
+            <Ionicons name="arrow-back" size={24} color="#000" />
+          </TouchableOpacity>
+          <Text style={styles.headerTitle}>FAQs</Text>
+        </View>
       </View>
 
-      
+
       <Text style={styles.heading}>How can we help?</Text>
       <View style={styles.faqCard}>
         <View style={styles.faqContent}>
-          <Text style={styles.question}>What is Pet parents?</Text>
+          <Text style={styles.question}>{question}</Text>
           <Text style={styles.answer}>
-            Lorem ipsum dolor sit amet. Eos sint obcaecati ad consequuntur odit qui iure quod. Hic nemo
-            repudiandae aut maiores praesentium nam enim error ut numquam dignissimos.
+            {answer}
           </Text>
         </View>
 
-       
+
         <View style={styles.feedbackSection}>
           <Text style={styles.feedbackText}>Was this helpful?</Text>
           <View style={styles.feedbackButtons}>
@@ -38,7 +41,7 @@ const supportfaq2 = ({ navigation }) => {
         </View>
       </View>
 
-    
+
       <View style={styles.contactCard}>
         <Text style={styles.contactText}>
           Still need help?{'\n'}
@@ -49,30 +52,36 @@ const supportfaq2 = ({ navigation }) => {
         </TouchableOpacity>
       </View>
 
-   
-      <View style={styles.footer}>
-        <TouchableOpacity style={styles.footerItem}>
-          <Ionicons name="home-outline" size={28} color="#000" />
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.footerItem}>
-          <Ionicons name="person-outline" size={28} color="#000" />
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.footerItem}>
-          <Ionicons name="chatbubble-outline" size={28} color="#000" />
-        </TouchableOpacity>
-      </View>
+      
+
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#F9FAFB', paddingHorizontal: 16 },
+  container: {
+    flex: 1,
+    backgroundColor: '#F9FAFB',
+  },
   headerWrapper: {
+    paddingTop: Platform.OS === 'ios' ? 50 : 20,
+    backgroundColor: '#B1C9EF',
     flexDirection: 'row',
     alignItems: 'center',
-    paddingTop: Platform.OS === 'ios' ? 50 : 20,
-    paddingBottom: 10,
+    paddingHorizontal: 16,
+    paddingBottom: 16,
+    width: '100%',
+    marginLeft: 0,
+    marginRight: 0,
   },
+  header: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingVertical: 8,
+    justifyContent: 'flex-start',
+    width: '100%',
+  },
+  headerTitle: { fontSize: 18, fontWeight: 'bold', marginLeft: 16 },
   title: { fontSize: 18, fontWeight: 'bold', marginLeft: 16 },
   heading: { textAlign: 'center', fontSize: 18, fontWeight: 'bold', marginVertical: 10 },
   faqCard: {
@@ -109,17 +118,7 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-start',
   },
   contactButtonText: { color: '#FFF', fontSize: 14 },
-  footer: {
-    position: 'absolute',
-    bottom: 0,
-    left: 0,
-    right: 0,
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    paddingVertical: 16,
-    backgroundColor: '#E5EFFF',
-  },
-  footerItem: { alignItems: 'center' },
+
 });
 
 export default supportfaq2;
